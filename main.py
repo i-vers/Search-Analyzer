@@ -6,21 +6,21 @@ browsers = ['opera', 'google', 'chrome', 'edge', 'aloha', 'brave', 'vivaldi', 'd
 keywords_rem = ['download', 'install', 'set up']
 keywords_ini = ['remove', 'uninstall', 'delete', 'erase', 'switch to']
 
-def analize_search(search):
+def analyze_search(search):
      triggered = False
      search_m = search.lower().strip()
-
+     
      # path a
-
      for keyword_rem in keywords_rem:
           for browser in browsers:
                if keyword_rem in search_m and browser in search_m: 
                     triggered = True
+                    
      # path b
      for keyword_ini in keywords_ini:
           if keyword_ini in search_m and current_browser in search_m:
                triggered = True
-                         
+       
      if triggered:
           print('Are you trying to switch browsers?\n')
      else:
@@ -29,4 +29,4 @@ def analize_search(search):
 print()
 while True:
      search = input('Search: ')
-     analize_search(search)
+     analyze_search(search)
